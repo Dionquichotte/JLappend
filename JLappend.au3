@@ -1,15 +1,17 @@
 ;********************************************************************************************************************
-; JL Append v01, november 2015
+; JL Append v011, december 2015
 ;
 ; Sanquin CAP Laboratorium, Dion Methorst november 2015
 ;
 ; Script to fill up Tecan EVOware joblists with dummy PBS Samples until $MaxSamples is reached.
 ; JLappend.ini file in the script directory has a default entry of maximum 9 samples per joblist
+; JLappend.ini file can be changed after initial run of JLappend
+; Changes will apply until JLappend.ini is deleted, a new default JLappend.ini will be made upon restarting
 ;
 ; prerequisites:
 ;
 ; joblistfiles placed in folder inside FileLocation read from JLappend.ini
-; maximum amount of smaples per assay set in JLappend.ini file
+; maximum amount of samples per assay set in JLappend.ini file
 ;
 ; joblist format:
 ;
