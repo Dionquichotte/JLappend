@@ -1,5 +1,5 @@
 ;********************************************************************************************************************
-; JL Append v011, december 2015
+; JL Append v012, december 2015
 ;
 ; Sanquin CAP Laboratorium, Dion Methorst november 2015
 ;
@@ -12,13 +12,19 @@
 ;
 ; joblistfiles placed in folder inside FileLocation read from JLappend.ini
 ; maximum amount of samples per assay set in JLappend.ini file
-;
+;____________________________________________________________________________________________________________________
 ; joblist format:
 ;
 ; 					header							H; time and date
 ;					any subsequent sample 			P; SampleId
 ;													O;[LIMSID];1;[dilution protocol];1;1.0
 ;					end of file						L;
+;____________________________________________________________________________________________________________________
+;
+; version history
+; nov 2015	v01		first working test version
+; dec2015	v011	added remarks
+; 			v012	fixed typo Jlappend.ini
 ;
 ;********************************************************************************************************************
 #include <AutoItConstants.au3>
@@ -26,12 +32,12 @@
 #include <Array.au3>
 #include <File.au3>
 
-If not FileExists(@Scriptdir & "\Jlappend.ini") then
+If not FileExists(@Scriptdir & "\JLappend.ini") then
 	Local $Settings = "MaxSamples=9" & @CRLF & "FileLocation=C:\apps\EVO\job\"
-	IniWriteSection(@Scriptdir & "\Jlappend.ini", "Settings", $Settings)
+	IniWriteSection(@Scriptdir & "\JLappend.ini", "Settings", $Settings)
 	Endif
 
-$aSettings = IniReadSection(@Scriptdir & "\Jlappend.ini", "Settings")
+$aSettings = IniReadSection(@Scriptdir & "\JLappend.ini", "Settings")
 	;_ArrayDisplay($aSettings)
 
 $FileLocation = $aSettings[2][1]
